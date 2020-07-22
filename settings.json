@@ -1,0 +1,38 @@
+{
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "off",
+  "window.zoomLevel": 0,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "keyboard.dispatch": "keyCode",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.columnSelection": false,
+  "editor.minimap.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "solid",
+  "vim.cursorStylePerMode.insert": "block",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.camelCaseMotion.enable": true,
+  "vim.highlightedyank.enable": true,
+  "vim.leader": ",",
+  "vim.statusBarColorControl": true,
+  "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+  "vim.vimrc.enable": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+  },
+  "workbench.colorTheme": "Dracula Soft",
+  "workbench.activityBar.visible": true,
+  "vim.foldfix": true,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.useSystemClipboard": true
+}
