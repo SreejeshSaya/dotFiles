@@ -1,41 +1,22 @@
-"*****************************************************************************
-"" Plug
-"*****************************************************************************
 call plug#begin()
 
 " Comment/Un-comment 
 Plug 'tpope/vim-commentary'
-
-" NERDTREE
-Plug 'scrooloose/nerdtree'
-
-" Color-Scheme
 Plug 'morhetz/gruvbox' 
-
-" Lightline
 Plug 'itchyny/lightline.vim'
-Plug 'shinchu/lightline-gruvbox.vim'
+Plugin 'dracula/vim',{'as':'dracula'}
 
 call plug#end()
 
-"*****************************************************************************
-"" Basic Setup
-"*****************************************************************************"
-
 set autoread
 
-"" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8
 set ttyfast
-
-"" Visual
 syntax on
+
 set ruler
 set number
-set relativenumber
-set ruler
 set so=5
 
 "" Fix backspace indent
@@ -46,7 +27,8 @@ set smarttab
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
-set expandtab
+
+set mouse=a
 
 set ai
 set si
@@ -59,14 +41,10 @@ let mapleader=','
 set hidden
 
 "" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+set hlsearch incsearch ignorecase smartcase
 
 " Turn backup off
-set nobackup
-set noswapfile
+set nobackup noswapfile
 
 set laststatus=2
 set noshowmode
@@ -77,6 +55,7 @@ set noshowmode
 
 "" Fast Saving
 nnoremap <leader>w :w!<CR>
+
 "" Fast Quit
 nnoremap <leader>q :wq!<CR>
 
@@ -148,35 +127,6 @@ vmap > >gv
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
-
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-"*****************************************************************************
-"" Visual Settings
-"*****************************************************************************
-
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_extra_types = 1
-
-let g:gruvbox_italix=1
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_contrast_light='hard'  
-set background=dark
-silent! colorscheme gruvbox
-
-let g:lightline = {
- \ 'colorscheme': 'gruvbox'
- \ }
