@@ -1,0 +1,4 @@
+#!/bin/bash
+cp -r .config/nvim config/
+cp .vimrc vimrc
+cp .config/Code/User/settings.json .
