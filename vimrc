@@ -1,41 +1,71 @@
-call plug#begin()
+"" au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+"" au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
-" Comment/Un-comment 
-Plug 'tpope/vim-commentary'
+call plug#begin()
+Plug 'tpope/vim-commentary' " Comment/Un-comment 
 Plug 'morhetz/gruvbox' 
 Plug 'itchyny/lightline.vim'
-Plugin 'dracula/vim',{'as':'dracula'}
-
+Plug 'dracula/vim',{'as':'dracula'}
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+    " Need Snippets
 call plug#end()
 
 set autoread
-
+set number
+set ruler
 set encoding=utf-8
 set fileencoding=utf-8
 set ttyfast
 syntax on
 
-set ruler
-set number
+set smartindent
+set tabstop=4
+
 set so=5
 set backspace=indent,eol,start
 set smarttab
-set tabstop=4
+
+set hidden
+
 set softtabstop=0
 set shiftwidth=4
-
-set mouse=a
 
 set ai
 set si
 set wrap
-set hidden
 
 "" Searching
 set hlsearch incsearch ignorecase smartcase
 
 " Turn backup off
 set nobackup noswapfile
+
+"" Status bar
+"" set laststatus=2
+
+set mouse=a
+set mousemodel=popup
+
+" set clipboard=unnamed,unnamedplus
+filetype plugin indent on
+
+command! FixWhitespace :%s/\s\+$//e
+
+" terminal emulation
+nnoremap <silent> <leader>sh :terminal<CR>
+
+"" Use modeline overrides
+"" set modeline
+"" set modelines=10
+
+"" set title
+"" set titleold="Terminal"
+"" set titlestring=%F
+
+"" set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+
 
 syntax on
 let mapleader=','
@@ -54,6 +84,8 @@ inoremap {[ {<CR>}<Esc>O
 inoremap {; {<CR>};<Esc>O
 inoremap {{ {<CR>}<CR><Esc>kO
 
+inoremap endl <<<space>"\n";<CR>
+
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
@@ -67,3 +99,16 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+nnoremap <Leader>e :e ~/.vimrc<CR>
+
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
