@@ -12,6 +12,9 @@ Plug 'airblade/vim-gitgutter'
     " Need Snippets
 call plug#end()
 
+colorscheme gruvbox
+set background=dark
+
 set autoread
 set number
 set ruler
@@ -32,8 +35,7 @@ set hidden
 set softtabstop=0
 set shiftwidth=4
 
-set ai
-set si
+set ai si
 set wrap
 
 "" Searching
@@ -43,7 +45,12 @@ set hlsearch incsearch ignorecase smartcase
 set nobackup noswapfile
 
 "" Status bar
-"" set laststatus=2
+set laststatus=2
+
+if !has('gui_running')
+		set t_Co=256
+endif
+set noshowmode
 
 set mouse=a
 set mousemodel=popup
