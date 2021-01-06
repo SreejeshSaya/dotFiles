@@ -52,6 +52,11 @@ if !has('gui_running')
 endif
 set noshowmode
 
+let g:lightline = {
+	\ 'colorscheme': 'jellybeans'
+	\ }
+
+
 set mouse=a
 set mousemodel=popup
 
@@ -62,6 +67,26 @@ command! FixWhitespace :%s/\s\+$//e
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
+
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
+"" Buffer nav
+" noremap <leader>z :bp<CR>
+" noremap <leader>q :bp<CR>
+" noremap <leader>x :bn<CR>
+" noremap <leader>w :bn<CR>
+
+
+"" Close buffer
+noremap <leader>c :bd<CR>
+
+
+"" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
 
 "" Use modeline overrides
 "" set modeline
