@@ -32,8 +32,6 @@
   "workbench.colorTheme": "Dracula Soft",
   "workbench.activityBar.visible": true,
   "vim.foldfix": true,
-  "vim.enableNeovim": true,
-  "vim.neovimPath": "/usr/bin/nvim",
   "vim.useSystemClipboard": true,
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": "#0E6925",

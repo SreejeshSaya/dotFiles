@@ -1,4 +1,20 @@
 #!/bin/bash
-cp -r .config/nvim config/
-cp .vimrc vimrc
-cp .config/Code/User/settings.json .
+
+echo "Copy IN/ Copy OUT?"
+echo "1 IN"
+echo "2 OUT"
+read choice
+if [ $choice = "1" ]; then
+	echo "COPY IN"
+	cp ~/.vimrc ./vimrc
+	cp ~/.config/Code/User/settings.json ./settings.json
+elif [ $choice = "2" ]; then
+	echo "COPY OUT"
+	cp ./vimrc ~/.vimrc
+	cp ./settings.json ~/.config/Code/User/settings.json
+else
+	echo "Error in Choice"
+	exit 1
+fi
+
+exit

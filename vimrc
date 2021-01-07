@@ -2,8 +2,8 @@
 "" au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
 call plug#begin()
-Plug 'tpope/vim-commentary' " Comment/Un-comment 
-Plug 'morhetz/gruvbox' 
+Plug 'tpope/vim-commentary' " Comment/Un-comment
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'tpope/vim-commentary'
@@ -22,6 +22,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set ttyfast
 syntax on
+set updatetime=100
 
 set smartindent
 set tabstop=4
@@ -63,13 +64,15 @@ set mousemodel=popup
 " set clipboard=unnamed,unnamedplus
 filetype plugin indent on
 
-command! FixWhitespace :%s/\s\+$//e
+command! FixWhitespace :%s/\s\+$//e<CR>
+command! Gge :GitGutterToggle
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
+nnoremap <leader>g :GitGutterToggle
 
 "" Buffer nav
 " noremap <leader>z :bp<CR>
