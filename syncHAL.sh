@@ -24,7 +24,7 @@ rsync \
 	--force \
 	--human-readable \
 	--progress \
-	~/Pictures \
+	~/Documents \
 	$1
 	
 
