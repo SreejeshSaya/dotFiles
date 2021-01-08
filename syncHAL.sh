@@ -26,6 +26,3 @@ rsync \
 	--progress \
 	~/Documents \
 	$1
-	
-
-
