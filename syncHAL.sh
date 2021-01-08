@@ -26,5 +26,5 @@ rsync \
 	--human-readable \
 	--progress \
 	--delete-after \
-	~/Pictures \
+	~/Documents \
 	$1
