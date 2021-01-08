@@ -2,27 +2,29 @@
 
 # rsync commands to sync User Files between two Linux machines
 # v - increase verbosity
-# r - recurse into directories
 # u - skip files that are newer on the receiver
-# l - copy symlinks as symlinks
-# p - preserve permissions
+# a - equals -rlptgoD
+
+# r - recurse into directories [NOT IN USE]
+# l - copy symlinks as symlinks [NOT IN USE]
+# p - preserve permissions [NOT IN USE]
+# t - preserve modification times [NOT IN USE]
+
 # hard-links - preserve hardlinks
 # E - preserve executability
-# t - preserve modification times
 # force - force deletion of empty dirs
 # human-readable - human readable format
 # progress - show progress of file transfer
+# deleted - delete files if don't exist on source after transfer
 
 rsync \
 	-v \
-	-r \
-	-l \
-	-p \
+	-a \
 	--hard-links \
 	-E \
-	-t \
 	--force \
 	--human-readable \
 	--progress \
-	~/Documents \
+	--delete-after \
+	~/Pictures \
 	$1
