@@ -17,4 +17,12 @@ else
 	exit 1
 fi
 
+# Link youtube-dl config
+if [ ! -f /etc/youtube-dl.conf ]; then
+	echo "Creating youtube-dl config link: /etc/youtube-dl.conf"
+	ln -s ./youtube-dl.conf /etc/youtube-dl.conf
+else
+	echo "File already exists: /etc/youtube-dl.conf"
+fi
+
 exit
