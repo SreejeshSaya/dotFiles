@@ -27,4 +27,4 @@ rsync \
 	--progress \
 	--delete-after \
 	~/Documents \
-	$1
+	sreejesh@$1:
